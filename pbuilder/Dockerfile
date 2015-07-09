@@ -8,8 +8,8 @@ ENV _apt_clean="eval apt-get clean && $_clean"
 
 # Install pbuilder base dependancy
 RUN apt-get update -qq && apt-get install -qqy \
-			git qemu-user-static pbuilder && $_apt_clean
-
+			git qemu-user-static pbuilder ubuntu-dev-tools && $_apt_clean
+# need these? dunno: debootstrap devscripts
 
 # Download tvheadend
 RUN mkdir /build /out \
